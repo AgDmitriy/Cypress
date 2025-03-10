@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-10T11:28:29.447Z",
+    "end": "2025-03-10T11:28:39.296Z",
+    "duration": 9849,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c26d2488-b3bc-4213-965f-8dfe9d8ae0e2",
+      "title": "",
+      "fullFile": "cypress/e2e/3-qauto-tests/add-car-test.cy.js",
+      "file": "cypress/e2e/3-qauto-tests/add-car-test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7d7bb4a1-0883-42ff-a798-18bf0da823f5",
+          "title": "Add Cars tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify add new car with empty fields",
+              "fullTitle": "Add Cars tests Verify add new car with empty fields",
+              "timedOut": null,
+              "duration": 4541,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_GaragePage.default.clickAddCarButton();\n_AddAndEditCarForms.default.elements.carMileageInput().click().blur();\n_AddAndEditCarForms.default.getErrorMessage().should(\"have.text\", \"Mileage cost required\");\n_AddAndEditCarForms.default.clearCarMileageInput();\n_AddAndEditCarForms.default.fillCarMileage(\"-1\");\n_AddAndEditCarForms.default.getErrorMessage().should(\"have.text\", \"Mileage has to be from 0 to 999999\");\n_AddAndEditCarForms.default.clearCarMileageInput();\n_AddAndEditCarForms.default.fillCarMileage(\"1000000\");\n_AddAndEditCarForms.default.getErrorMessage().should(\"have.text\", \"Mileage has to be from 0 to 999999\");\n_AddAndEditCarForms.default.clickCancelAddCarButton();",
+              "err": {},
+              "uuid": "2028d08b-c449-4513-ab96-20529c563f17",
+              "parentUUID": "7d7bb4a1-0883-42ff-a798-18bf0da823f5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add car and verify add fuel expense",
+              "fullTitle": "Add Cars tests Add car and verify add fuel expense",
+              "timedOut": null,
+              "duration": 4540,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_GaragePage.default.clickAddCarButton();\n_AddAndEditCarForms.default.selectCarBrand(\"Ford\");\n_AddAndEditCarForms.default.selectCarModel(\"Fusion\");\n_AddAndEditCarForms.default.fillCarMileage(\"10\");\n_AddAndEditCarForms.default.clickSaveCarButton();\n_GaragePage.default.clickAddFuelExpenseButton();\n_AddAndEditCarForms.default.elements.numberOfLitersInput().click().blur();\nexpect(_AddAndEditCarForms.default.getErrorMessage().should(\"have.text\", \"Liters required\"));\n_AddAndEditCarForms.default.fillNumberOfLitersInput(\"0\");\nexpect(_AddAndEditCarForms.default.getErrorMessage().should(\"have.text\", \"Liters has to be from 0.01 to 9999\"));\n_AddAndEditCarForms.default.clearNumberOfLitersInput();\n_AddAndEditCarForms.default.fillNumberOfLitersInput(\"10\");\n_AddAndEditCarForms.default.clickTotalCostInput();\n_AddAndEditCarForms.default.elements.totalCostInput().blur();\nexpect(_AddAndEditCarForms.default.getErrorMessage().should(\"have.text\", \"Total cost required\"));\n_AddAndEditCarForms.default.fillTotalCostInput(\"-1\");\n_AddAndEditCarForms.default.elements.totalCostInput().blur();\nexpect(_AddAndEditCarForms.default.getErrorMessage().should(\"have.text\", \"Total cost has to be from 0.01 to 1000000\"));\n_AddAndEditCarForms.default.clearTotalCostInput();\n_AddAndEditCarForms.default.fillTotalCostInput(\"5\");\n_AddAndEditCarForms.default.clickSaveCarButton();\nexpect(_AddAndEditCarForms.default.getAlertErrorMessage().should(\"have.text\", \"First expense mileage must not be less or equal to car initial mileage. Car initial mileage is 10\"));\n_AddAndEditCarForms.default.fillEditCarMileage(\"35\");\n_AddAndEditCarForms.default.clickSaveCarButton();",
+              "err": {},
+              "uuid": "73e3bc9d-215c-4a9d-adff-a2a41ff3b1e2",
+              "parentUUID": "7d7bb4a1-0883-42ff-a798-18bf0da823f5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2028d08b-c449-4513-ab96-20529c563f17",
+            "73e3bc9d-215c-4a9d-adff-a2a41ff3b1e2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9081,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
