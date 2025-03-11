@@ -2,16 +2,18 @@
   "name": "cypress",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cypress": "^13.17.0"
+    "cypress": "^13.17.0",
+    "cypress-mochawesome-reporter": "^3.8.2"
   },
   "dependencies": {
     "@faker-js/faker": "^9.5.1"
+  },
+  "scripts": {
+    "cypress:runMain": "npx cypress run --spec \"cypress/e2e/3-qauto-tests/add-car-test.cy.js\" --config-file qauto.config.js",
+    "cypress:runTest": "npx cypress run --spec \"cypress/e2e/3-qauto-tests/add-car-test.cy.js\" --config-file qauto2.config.js"
   }
 }
